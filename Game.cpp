@@ -36,7 +36,7 @@ void Game::createCards(Level level) {
 
         VisualCard card(ids[i], x, y, size);
 
-        // Формуємо шлях до зображень (Card1.png, Card2.png, ...)
+        // Г”Г®Г°Г¬ГіВєГ¬Г® ГёГ«ГїГµ Г¤Г® Г§Г®ГЎГ°Г Г¦ГҐГ­Гј (Card1.png, Card2.png, ...)
         std::string frontPath = "assets/cards/Card" + std::to_string(ids[i] + 1) + ".png";
         std::string backPath = "assets/cards/back.png";
 
@@ -186,25 +186,25 @@ void Game::run() {
 
 
 void Game::setupMenu() {
-    // Завантаження шрифту
+    // Г‡Г ГўГ Г­ГІГ Г¦ГҐГ­Г­Гї ГёГ°ГЁГґГІГі
     if (!font.loadFromFile("assets/font/arial.ttf")) {
         std::cerr << "Could not load font!\n";
     }
 
-    // Завантаження фонової картинки
+    // Г‡Г ГўГ Г­ГІГ Г¦ГҐГ­Г­Гї ГґГ®Г­Г®ГўГ®Вї ГЄГ Г°ГІГЁГ­ГЄГЁ
     if (!menuBackgroundTexture.loadFromFile("assets/menu_background.jpg")) {
         std::cerr << "Could not load menu background image!\n";
     }
     menuBackgroundSprite.setTexture(menuBackgroundTexture);
 
-    // Заголовок меню
+    // Г‡Г ГЈГ®Г«Г®ГўГ®ГЄ Г¬ГҐГ­Гѕ
     titleText.setFont(font);
     titleText.setString("Choose Difficulty:");
     titleText.setCharacterSize(36);
     titleText.setFillColor(sf::Color::White);
     titleText.setPosition(170, 50);
 
-    // Розміри кнопок
+    // ГђГ®Г§Г¬ВіГ°ГЁ ГЄГ­Г®ГЇГ®ГЄ
     sf::Vector2f buttonSize(300, 50);
     float x = 150;
 
@@ -228,15 +228,6 @@ void Game::setupMenu() {
     mediumText.setFillColor(sf::Color::Black);
     mediumText.setPosition(x + 60, 220);
 
-<<<<<<<<< Temporary merge branch 1
-    // Hard button
-=========
-    // Hard
->>>>>>>>> Temporary merge branch 2
-    // Hard button
-=========
-    // Hard
->>>>>>>>> Temporary merge branch 2
     hardButton.setSize(buttonSize);
     hardButton.setPosition(x, 290);
     hardButton.setFillColor(sf::Color(200, 50, 50));
