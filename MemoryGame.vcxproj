@@ -147,6 +147,41 @@
     <ClCompile Include="VisualCard.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\cards\back.png" />
+    <Image Include="assets\cards\Card1.png" />
+    <Image Include="assets\cards\Card10.png" />
+    <Image Include="assets\cards\Card11.png" />
+    <Image Include="assets\cards\Card12.png" />
+    <Image Include="assets\cards\Card13.png" />
+    <Image Include="assets\cards\Card14.png" />
+    <Image Include="assets\cards\Card15.png" />
+    <Image Include="assets\cards\Card16.png" />
+    <Image Include="assets\cards\Card17.png" />
+    <Image Include="assets\cards\Card18.png" />
+    <Image Include="assets\cards\Card19.png" />
+    <Image Include="assets\cards\Card2.png" />
+    <Image Include="assets\cards\Card20.png" />
+    <Image Include="assets\cards\Card21.png" />
+    <Image Include="assets\cards\Card22.png" />
+    <Image Include="assets\cards\Card23.png" />
+    <Image Include="assets\cards\Card24.png" />
+    <Image Include="assets\cards\Card25.png" />
+    <Image Include="assets\cards\Card26.png" />
+    <Image Include="assets\cards\Card27.png" />
+    <Image Include="assets\cards\Card28.png" />
+    <Image Include="assets\cards\Card29.png" />
+    <Image Include="assets\cards\Card3.png" />
+    <Image Include="assets\cards\Card30.png" />
+    <Image Include="assets\cards\Card31.png" />
+    <Image Include="assets\cards\Card32.png" />
+    <Image Include="assets\cards\Card4.png" />
+    <Image Include="assets\cards\Card5.png" />
+    <Image Include="assets\cards\Card6.png" />
+    <Image Include="assets\cards\Card7.png" />
+    <Image Include="assets\cards\Card8.png" />
+    <Image Include="assets\cards\Card9.png" />
+    <Image Include="assets\images\menu_background.jpg" />
+    <Image Include="assets\menu_background.jpg" />
     <Image Include="Textures\background1.jpg" />
     <Image Include="Textures\bullet.png" />
     <Image Include="Textures\player_sheet.png" />
@@ -154,6 +189,7 @@
     <Image Include="Textures\tile_sheet.png" />
   </ItemGroup>
   <ItemGroup>
+    <Font Include="assets\font\arial.ttf" />
     <Font Include="Fonts\Dosis-Light.ttf" />
     <Font Include="Fonts\PixellettersFull.ttf" />
   </ItemGroup>

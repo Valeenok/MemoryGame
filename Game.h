@@ -20,6 +20,7 @@ private:
     Level currentLevel;
     State state;
 
+    // Текст для меню
     sf::Font font;
     sf::Text titleText, easyText, mediumText, hardText;
 
