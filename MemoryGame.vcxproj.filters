@@ -27,6 +27,9 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\background1.jpg">
@@ -44,10 +47,116 @@
     <Image Include="Textures\tile_sheet.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="assets\cards\back.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card11.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card12.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card13.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card14.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card15.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card17.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card18.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card19.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card20.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card21.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card22.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card23.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card24.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card25.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card26.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card27.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card28.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card29.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card30.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card31.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card32.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\cards\Card9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\menu_background.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\menu_background.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\Dosis-Light.ttf" />
     <Font Include="Fonts\PixellettersFull.ttf" />
+    <Font Include="assets\font\arial.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Card.h">
@@ -57,6 +166,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

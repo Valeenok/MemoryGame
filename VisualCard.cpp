@@ -21,8 +21,12 @@ VisualCard::VisualCard(int id, float x, float y, float size)
 }
 
 void VisualCard::draw(sf::RenderWindow& window) {
-    if (!texturesLoaded) return;
-
+    if (!texturesLoaded) {
+        // Можна малювати shape замість sprite, щоб було видно місце карти
+        window.draw(shape);
+        return;
+    }
+    // Інакше малюємо sprite з текстурами
     if (revealed() || matched())
         sprite.setTexture(frontTexture);
     else
@@ -36,6 +40,7 @@ void VisualCard::draw(sf::RenderWindow& window) {
 
     window.draw(sprite);
 }
+
 
 
 bool VisualCard::contains(sf::Vector2f point) {
