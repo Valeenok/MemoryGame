@@ -42,10 +42,10 @@ void Game::createCards(Level level) {
 
         if (!card.loadTextures(frontPath, backPath)) {
             std::cerr << "Unable to download texture for card with ID = " << ids[i] << std::endl;
-        }
+    }
 
         cards.push_back(card);
-    }
+}
 }
 
 
@@ -94,16 +94,8 @@ void Game::draw() {
     window.clear();
 
     if (state == State::Menu) {
-        if (menuBackgroundTexture.getSize().x > 0)
-            window.draw(menuBackgroundSprite);
-        else
-            window.draw(background);  // резервний фон
-
         window.draw(titleText);
 
-        window.draw(easyButton); window.draw(easyText);
-        window.draw(mediumButton); window.draw(mediumText);
-        window.draw(hardButton); window.draw(hardText);
     }
     else {
         for (auto& card : cards)
@@ -187,31 +179,19 @@ void Game::run() {
 void Game::setupMenu() {
     font.loadFromFile("assets/font/arial.ttf");
 
-    // Завантаження фону
-    if (menuBackgroundTexture.loadFromFile("assets/images/menu_background.jpg")) {
-        menuBackgroundSprite.setTexture(menuBackgroundTexture);
-        sf::Vector2f scale(
-            float(window.getSize().x) / menuBackgroundTexture.getSize().x,
-            float(window.getSize().y) / menuBackgroundTexture.getSize().y
-        );
-        menuBackgroundSprite.setScale(scale);
-    }
-    else {
-        // Резервний колір фону
-        background.setSize(sf::Vector2f(window.getSize()));
-        background.setFillColor(sf::Color(50, 50, 80));
-    }
+    background.setSize(sf::Vector2f(window.getSize()));
 
+    // Текст заголовку
     titleText.setFont(font);
     titleText.setString("Choose Difficulty:");
     titleText.setCharacterSize(36);
     titleText.setFillColor(sf::Color::White);
     titleText.setPosition(170, 50);
 
+    // Розміри кнопок
     sf::Vector2f buttonSize(300, 50);
     float x = 150;
 
-    // Easy
     easyButton.setSize(buttonSize);
     easyButton.setPosition(x, 130);
     easyButton.setFillColor(sf::Color(100, 200, 100));
@@ -221,7 +201,6 @@ void Game::setupMenu() {
     easyText.setFillColor(sf::Color::Black);
     easyText.setPosition(x + 70, 140);
 
-    // Medium
     mediumButton.setSize(buttonSize);
     mediumButton.setPosition(x, 210);
     mediumButton.setFillColor(sf::Color(255, 215, 0));
@@ -231,7 +210,6 @@ void Game::setupMenu() {
     mediumText.setFillColor(sf::Color::Black);
     mediumText.setPosition(x + 60, 220);
 
-    // Hard
     hardButton.setSize(buttonSize);
     hardButton.setPosition(x, 290);
     hardButton.setFillColor(sf::Color(200, 50, 50));
