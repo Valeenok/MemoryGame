@@ -228,7 +228,15 @@ void Game::setupMenu() {
     mediumText.setFillColor(sf::Color::Black);
     mediumText.setPosition(x + 60, 220);
 
+<<<<<<<<< Temporary merge branch 1
+    // Hard button
+=========
     // Hard
+>>>>>>>>> Temporary merge branch 2
+    // Hard button
+=========
+    // Hard
+>>>>>>>>> Temporary merge branch 2
     hardButton.setSize(buttonSize);
     hardButton.setPosition(x, 290);
     hardButton.setFillColor(sf::Color(200, 50, 50));
