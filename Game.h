@@ -6,6 +6,7 @@
 #include "State.h"
 #include "Menu.h"
 #include "GameUI.h"
+#include "Sound.h"
 
 class Game {
 public:
@@ -15,6 +16,7 @@ public:
 private:
     Menu menu;
     GameUI ui;
+    Sound sound;
 
     sf::RenderWindow window;
     std::vector<VisualCard> cards;

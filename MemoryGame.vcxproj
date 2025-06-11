@@ -148,6 +148,7 @@
     <ClCompile Include="GameUI.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="VisualCard.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +204,7 @@
     <ClInclude Include="GameUI.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="VisualCard.h" />
   </ItemGroup>

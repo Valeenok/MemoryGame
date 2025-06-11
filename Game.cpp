@@ -18,6 +18,10 @@ Game::Game()
     }
 
     VisualCard::loadFont("assets/font/arial.ttf");
+
+    if (!sound.loadSounds()) {
+        std::cerr << "Error loading sounds!" << std::endl;
+    }
 }
 
 
@@ -148,6 +152,8 @@ void Game::handleClick(float x, float y) {
             card.reveal();
             card.updateVisualState();
 
+            sound.playFlipSound();
+
             if (!first) {
                 first = &card;
             }
@@ -160,6 +166,7 @@ void Game::handleClick(float x, float y) {
         }
     }
 }
+
 
 
 void Game::update() {
@@ -177,6 +184,7 @@ void Game::update() {
             if (first->getId() == second->getId()) {
                 first->match();
                 second->match();
+                sound.playMatchSound();
                 int maxAttempts = getMaxAttemptsForLevel(currentLevel);
                 attemptsLeft = std::min(attemptsLeft + 2, maxAttempts);
             }
@@ -238,6 +246,7 @@ void Game::checkGameOverConditions() {
     if (attemptsLeft <= 0) {
         isGameOver = true;
         ui.setGameOverMessage("Out of attempts!");
+        sound.playLoseSound();
     }
 
     bool allMatched = std::all_of(cards.begin(), cards.end(), [](const VisualCard& c) {
@@ -247,8 +256,10 @@ void Game::checkGameOverConditions() {
     if (allMatched) {
         isGameOver = true;
         ui.setGameOverMessage("You win!");
+        sound.playWinSound();
     }
 }
+
 
 void Game::processGameOverClick(float x, float y) {
     if (ui.isRetryButtonClicked(x, y)) {
