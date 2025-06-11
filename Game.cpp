@@ -210,7 +210,7 @@ void Game::draw() {
         for (auto& card : cards)
             card.draw(window);
 
-        // Малюємо UI панель праворуч
+        // РњР°Р»СЋС”РјРѕ UI РїР°РЅРµР»СЊ РїСЂР°РІРѕСЂСѓС‡
         window.draw(uiPanel);
         window.draw(timerText);
         window.draw(attemptsText);
@@ -429,4 +429,8 @@ void Game::processGameOverClick(float x, float y) {
     else if (exitButton.getGlobalBounds().contains(x, y)) {
         state = State::Menu;
     }
+    hardText.setString("Hard (8x8)");
+    hardText.setCharacterSize(24);
+    hardText.setFillColor(sf::Color::Black);
+    hardText.setPosition(x + 70, 300);
 }
