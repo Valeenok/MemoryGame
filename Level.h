@@ -2,6 +2,7 @@
 #define LEVEL_H
 
 enum class Level {
+    None,
     Easy,
     Medium,
     Hard
