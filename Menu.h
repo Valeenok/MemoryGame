@@ -4,37 +4,24 @@
 
 class Menu {
 private:
-    // Шрифт
-    sf::Font font;
 
-    // Фон меню
+    sf::Font font;
     sf::Texture menuBackgroundTexture;
     sf::Sprite menuBackgroundSprite;
-
-    // Заголовок
     sf::Text titleText;
-
-    // Кнопки та їх тексти
     sf::RectangleShape easyButton, mediumButton, hardButton;
     sf::Text easyText, mediumText, hardText;
-
-    // Розміри вікна (для правильного позиціювання)
     sf::Vector2u windowSize;
 
 public:
     Menu();
 
-    // Ініціалізація
     bool initialize(const sf::Vector2u& windowSize);
-
-    // Оновлення та відрисовка
     void updateHover(const sf::RenderWindow& window);
     void draw(sf::RenderWindow& window);
-
     Level processClick(float x, float y);
 
 private:
-    // Допоміжні методи
     bool loadAssets();
     void setupBackground();
     void setupTitle();

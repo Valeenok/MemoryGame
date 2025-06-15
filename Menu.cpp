@@ -3,7 +3,6 @@
 #include <optional>
 
 Menu::Menu() {
-    // Конструктор порожній, ініціалізація відбувається в initialize()
 }
 
 bool Menu::initialize(const sf::Vector2u& windowSize) {
@@ -89,7 +88,6 @@ void Menu::updateHover(const sf::RenderWindow& window) {
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     sf::Vector2f mp(mousePos);
 
-    // Оновлюємо кольори кнопок при наведенні
     easyButton.setFillColor(
         easyButton.getGlobalBounds().contains(mp) ?
         sf::Color(120, 220, 120) : sf::Color(100, 200, 100)
@@ -116,7 +114,7 @@ Level Menu::processClick(float x, float y) {
     else if (hardButton.getGlobalBounds().contains(x, y)) {
         return Level::Hard;
     }
-    return Level::None; // Замість std::nullopt
+    return Level::None;
 }
 
 void Menu::draw(sf::RenderWindow& window) {

@@ -8,19 +8,16 @@ void GameUI::initialize(const sf::Vector2u& windowSize, const std::string& fontP
         std::cerr << "Could not load font from " << fontPath << std::endl;
     }
 
-    // UI панель
     uiPanel.setSize({ 200.f, static_cast<float>(windowSize.y) });
     uiPanel.setFillColor(sf::Color(50, 50, 50, 200));
     uiPanel.setPosition(windowSize.x - 200.f, 0);
     setupInGameExitButton();
 
-    // Таймер
     timerText.setFont(font);
     timerText.setCharacterSize(24);
     timerText.setFillColor(sf::Color::White);
     timerText.setPosition(windowSize.x - 180.f, 100);
 
-    // Спроби
     attemptsText.setFont(font);
     attemptsText.setCharacterSize(24);
     attemptsText.setFillColor(sf::Color::White);

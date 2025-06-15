@@ -67,14 +67,17 @@ void Game::setLevelParameters(Level level) {
     case Level::Easy:
         levelTimeLimit = sf::seconds(90);
         attemptsLeft = 6;
+        maxAttemptsDuringGame = 6;
         break;
     case Level::Medium:
         levelTimeLimit = sf::seconds(120);
-        attemptsLeft = 10;
+        attemptsLeft = 25;
+        maxAttemptsDuringGame = 15;
         break;
     case Level::Hard:
         levelTimeLimit = sf::seconds(210);
-        attemptsLeft = 20;
+        attemptsLeft = 40;
+        maxAttemptsDuringGame = 20;
         break;
     }
 }
@@ -126,19 +129,6 @@ void Game::createVisualCards(const std::vector<int>& ids, int rows, int cols, fl
     }
 }
 
-int Game::getMaxAttemptsForLevel(Level level) const {
-    switch (level) {
-    case Level::Easy:
-        return 6;
-    case Level::Medium:
-        return 10;
-    case Level::Hard:
-        return 20;
-    default:
-        return 6;
-    }
-}
-
 void Game::handleClick(float x, float y) {
     if (checkingMatch) return;
 
@@ -168,25 +158,22 @@ void Game::handleClick(float x, float y) {
 }
 
 
-
 void Game::update() {
     if (state == State::Playing && !isGameOver) {
         sf::Time elapsed = levelClock.getElapsedTime();
         sf::Time remaining = levelTimeLimit - elapsed;
         ui.updateTimer(remaining);
-
-        if (remaining <= sf::Time::Zero) {
-            isGameOver = true;
-            ui.setGameOverMessage("Time is up!");
-        }
+        checkGameOverConditions(); 
 
         if (checkingMatch && revealTimer.getElapsedTime().asSeconds() > 1) {
             if (first->getId() == second->getId()) {
                 first->match();
                 second->match();
                 sound.playMatchSound();
-                int maxAttempts = getMaxAttemptsForLevel(currentLevel);
-                attemptsLeft = std::min(attemptsLeft + 2, maxAttempts);
+
+                if (attemptsLeft < maxAttemptsDuringGame) {
+                    attemptsLeft = std::min(attemptsLeft + 2, maxAttemptsDuringGame);
+                }
             }
             else {
                 first->hide();
@@ -201,10 +188,11 @@ void Game::update() {
             first = second = nullptr;
             checkingMatch = false;
 
-            checkGameOverConditions();
+            checkGameOverConditions();  
         }
     }
 }
+
 
 void Game::draw() {
     window.clear();
@@ -243,10 +231,20 @@ void Game::updateAttemptsText() {
 
 
 void Game::checkGameOverConditions() {
+    sf::Time elapsed = levelClock.getElapsedTime();
+    sf::Time remaining = levelTimeLimit - elapsed;
+    if (remaining <= sf::Time::Zero) {
+        isGameOver = true;
+        ui.setGameOverMessage("Time is up!");
+        sound.playLoseSound();
+        return;
+    }
+
     if (attemptsLeft <= 0) {
         isGameOver = true;
         ui.setGameOverMessage("Out of attempts!");
         sound.playLoseSound();
+        return;
     }
 
     bool allMatched = std::all_of(cards.begin(), cards.end(), [](const VisualCard& c) {

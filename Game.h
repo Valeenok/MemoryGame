@@ -27,6 +27,7 @@ private:
     sf::Clock levelClock;
     sf::Time levelTimeLimit;
     int attemptsLeft;
+    int maxAttemptsDuringGame;
     bool checkingMatch;
     bool isGameOver = false;
 
@@ -39,8 +40,6 @@ private:
     sf::Text timerText;
     sf::Text attemptsText;
 
-    sf::RectangleShape gameOverBackground;
-    sf::Text gameOverMessage;
     sf::RectangleShape retryButton;
     sf::Text retryButtonText;
     sf::RectangleShape exitButton;
@@ -56,7 +55,6 @@ private:
     void createVisualCards(const std::vector<int>& ids, int rows, int cols, float size);
 
     void handleClick(float x, float y);
-    int getMaxAttemptsForLevel(Level level) const;
     void update();
     void draw();
 
